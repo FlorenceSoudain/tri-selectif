@@ -1,0 +1,75 @@
+body {
+    background-color: lavender;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#poubelles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#jeu {
+    border: solid 5px black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#jaune {
+    width: 170px;
+    height: 250px;
+    background-color: #E0D42B;
+    border-radius: 10px;
+}
+
+#bleu {
+    width: 170px;
+    height: 250px;
+    background-color: #16193D;
+    border-radius: 10px;
+}
+
+#vert {
+    width: 170px;
+    height: 250px;
+    background-color: #0B2E13;
+    border-radius: 10px;
+}
+
+#marron {
+    width: 170px;
+    height: 250px;
+    background-color: #69471E;
+    border-radius: 10px;
+}
+
+#consignesEtDechets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+#consignes {
+    border: solid 3px black;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 25%;
+    padding: 5px;
+    font-size: 2em;
+}
+
+#dechets {
+    border: solid 3px black;
+    border-radius: 10px;
+    padding: 5px;
+    width: 75%;
+}
+
+img {
+    height: 150px;
+}
