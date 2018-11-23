@@ -1,10 +1,11 @@
 var dechets = [];
 
-var poubelleJ = document.getElementsByClassName('jaune');
-var poubelleB = document.getElementById('bleu');
-var poubelleV = document.getElementById('vert');
-var poubelleM = document.getElementById('marron');
-
+var poisson = new Image();
+poisson.src = 'images/0.jpg';
+dechets.push(poisson);
+poisson.className = "marron";
+poisson.id = "poisson";
+poisson.alt = "Arrêtes de poisson";
 
 var bouteillesPlastiques = new Image();
 bouteillesPlastiques.src = 'images/1.jpg';
@@ -44,18 +45,34 @@ journaux.className = "bleu";
 journaux.alt = "Une pile de journaux";
 
 var random;
-var score = 0;
+var score = 10;
 
 function aleatoire() {
-    random = Math.round((Math.random() * 5) + 1);
+    random = Math.round(Math.random() * 6);
     console.log(random);
     document.getElementById('dechets').innerHTML = ('<img src="images/' + random + '.jpg" />');
 
+
     switch (random) {
+        case 0:
+            document.getElementById('marron').addEventListener('click', function () {
+                console.log('bravo');
+                score--;
+            });
+            document.getElementById('bleu').addEventListener('click', function () {
+                console.log('rater');
+            });
+            document.getElementById('vert').addEventListener('click', function () {
+                console.log('rater');
+            });
+            document.getElementById('jaune').addEventListener('click', function () {
+                console.log('rater');
+            });
+            break;
         case 1:
             document.getElementById('jaune').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('rater');
@@ -70,7 +87,7 @@ function aleatoire() {
         case 2:
             document.getElementById('jaune').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('rater');
@@ -85,7 +102,7 @@ function aleatoire() {
         case 3:
             document.getElementById('jaune').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('rater');
@@ -100,7 +117,8 @@ function aleatoire() {
         case 4:
             document.getElementById('jaune').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
+                console.log(score);
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('rater');
@@ -118,7 +136,8 @@ function aleatoire() {
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
+                console.log(score);
             });
             document.getElementById('vert').addEventListener('click', function () {
                 console.log('rater');
@@ -133,7 +152,8 @@ function aleatoire() {
             });
             document.getElementById('bleu').addEventListener('click', function () {
                 console.log('bravo');
-                score = score + 1;
+                score--;
+                console.log(score);
             });
             document.getElementById('vert').addEventListener('click', function () {
                 console.log('rater');
@@ -142,9 +162,18 @@ function aleatoire() {
                 console.log('rater');
             });
             break;
+
     }
+    for (j = 0; j < score.length; j++) {
 
 
+        if (score == 0) {
+            document.getElementById('jeu').style.display = 'none';
+            document.getElementById('resultats').style.display = 'block';
+            document.getElementById('resultats').innerHTML = 'Vous avez gagné !' + score[i];
+            console.log(score);
+        }
+    }
 }
 
 document.getElementById("jouer").addEventListener("click", function () {
@@ -152,13 +181,9 @@ document.getElementById("jouer").addEventListener("click", function () {
 
 });
 
-if(score == 3)
-{
-    alert('fin');
-}
+document.getElementById('resultats').style.display = 'none';
 
 console.log(dechets.length);
 for (i = 0; i < dechets.length; i++) {
     console.log(dechets[i]);
 }
-console.log(score);
